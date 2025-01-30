@@ -2,6 +2,55 @@ html, body {
   margin: 0;
   padding: 0;
 }
-canvas {
-  display: block;
+
+/* FONTS */
+
+.lil-font {
+  font-family: "Varela Round", serif;
+}
+
+.big-font {
+  font-family: "Tilt Warp", serif;
+}
+
+.white-text {
+  color: rgb(255, 255, 255);
+}
+
+/* FORMAT */
+
+.left-align {
+  align-self: flex-start;
+  margin-left: 50px;
+}
+
+main, #content-frame{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  background-image: url(images/default-background.jpg);
+  background-size: cover;
+
+  width: 400px;
+  height: 400px;
+}
+
+#content-frame {
+  background-color: #e7d4dae4;
+  width: 310px;
+  height: 310px;
+  border-radius: 25px;
+  
+  position: relative;
+  flex-direction: column;
+}
+
+#settings-icon{
+  position: absolute;
+
+  top: 30px;
+  right: 30px;
 }
