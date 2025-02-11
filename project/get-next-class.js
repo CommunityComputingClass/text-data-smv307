@@ -1,7 +1,6 @@
-
 const CLIENT_ID = '1045036238525-0ln5724lfecbktl2410rrknlmvc2ualr.apps.googleusercontent.com';
 // important! move to backend server 
-const API_KEY = //REPLACE WITH KEY;
+let API_KEY = null;
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 
@@ -14,13 +13,13 @@ let gisInited = false;
 document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signout_button').style.visibility = 'hidden';
 
-// callback fter api.js is loaded.
+// callback fter api.js is loaded
 
 function gapiLoaded() {
     gapi.load('client', initializeGapiClient);
 }
 
-// callback after the API client is loaded. Loads the discovery doc to initialize the API.
+// callback after the API client is loaded. Loads the discovery doc to initialize the API
 
 async function initializeGapiClient() {
     await gapi.client.init({
@@ -31,7 +30,7 @@ async function initializeGapiClient() {
     maybeEnableButtons();
 }
 
-// callback after google Identity Services are loaded.
+// callback after google identity services are loaded
 function gisLoaded() {
     tokenClient = google.accounts.oauth2.initTokenClient({
     client_id: CLIENT_ID,
@@ -61,7 +60,7 @@ function handleAuthClick() {
     };
 
     if (gapi.client.getToken() === null) {
-    // prompt the user to select a Google Account and ask for consent to share their data when establishing a new session
+    // prompt the user to select a account and ask for consent to share their data when establishing a new session
     tokenClient.requestAccessToken({prompt: 'consent'});
     } else {
     // skip display of account chooser and consent dialog for an existing session
@@ -102,7 +101,7 @@ async function listUpcomingEvents() {
         return;
     }
 
-    const events = response.result.items.filter(event => event.start && event.start.dateTime); // no all-day events
+    const events = response.result.items.filter(event => event.start && event.start.dateTime); // filter out all-day events
     console.log(response.result.items); 
 
     // if no classes found
@@ -111,7 +110,7 @@ async function listUpcomingEvents() {
         return;
     }
     
-    // display next class 
+    // show next class
     const nextClass = events[0];
     const output = `your next class is: ${nextClass.summary}`;
 

@@ -8,27 +8,35 @@
   
 
     <title>Next Class</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
     <meta charset="utf-8" />
 
   </head>
   <body>
     <main>
       <div id="content-frame">
-        <a id="settings-icon"><img src="images/icon-settings.png"></a> 
-        <h1 id="greeter" class="big-font white-text left-align">Hello,<br>Name</h1>
+        <a id="settings-icon" href="settings.html"><img src="images/icon-settings.png" alt="settings"></a> 
+        <h1 id="greeter" class="big-font white-text left-align">Hello,<br><span id="username">Name</span></h1>
         <p id="next-class" class="lil-font white-text left-align ">your next class will show up here</p>
       </div>
     </main>
 
-    <!-- add to settings later -->
+    <!-- for test -->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
 
     <p id="content" style="white-space: pre-wrap;"></p>
 
     <script src="get-next-class.js"></script>
-    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+    <script src="custom-name.js"></script>
+    <script>
+      // greet user with name input in settings
+      let savedName = localStorage.getItem("savedText");
+      console.log(savedName);
+      document.getElementById("username").innerHTML = savedName;
+    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer onload="gisLoaded()"></script>
+    <script src="https://apis.google.com/js/api.js" async defer onload="gapiLoaded()"></script>
+
   </body>
 </html>

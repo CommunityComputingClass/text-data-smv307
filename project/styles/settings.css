@@ -1,0 +1,24 @@
+.back-arrow {
+    position: absolute;
+    top: 85px;
+    left: 80px;
+    cursor: pointer;
+}
+
+img {
+    height: 30px;
+    width: 20px;
+}
+
+button {
+    background-color: #ffffff;
+    padding: 10px;
+
+    border-radius: 10px;
+    border: none;
+}
+
+input[type=text]{
+    border: 2px solid  #de9eb1;;
+    border-radius: 5px;
+}

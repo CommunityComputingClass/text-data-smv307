@@ -17,6 +17,10 @@ html, body {
   color: rgb(255, 255, 255);
 }
 
+.purple-text {
+  color: #de9eb1;
+}
+
 /* FORMAT */
 
 .left-align {
@@ -31,8 +35,9 @@ main, #content-frame{
   justify-content: center;
 }
 
+/* bg image */
 main {
-  background-image: url(images/default-background.jpg);
+  background-image: url(../images/default-background.jpg);
   background-size: cover;
 
   width: 400px;
