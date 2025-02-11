@@ -1,0 +1,17 @@
+[33m6700325[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: rebase (finish): returning to refs/heads/main
+[33m6700325[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: rebase (start): checkout HEAD~5
+[33m7baf3fe[m HEAD@{2}: commit: custom greeting name
+[33m6700325[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: commit: displays next class
+[33mf7fd3c4[m HEAD@{4}: reset: moving to HEAD~2
+[33m29f95ff[m HEAD@{5}: rebase (abort): returning to refs/heads/main
+[33meb6cc62[m HEAD@{6}: reset: moving to HEAD~2
+[33mf7fd3c4[m HEAD@{7}: rebase (start): checkout HEAD~2
+[33m29f95ff[m HEAD@{8}: rebase (abort): returning to refs/heads/main
+[33m29f95ff[m HEAD@{9}: rebase (abort): returning to refs/heads/main
+[33m29f95ff[m HEAD@{10}: reset: moving to 29f95ff
+[33mf7fd3c4[m HEAD@{11}: reset: moving to f7fd3c4
+[33m29f95ff[m HEAD@{12}: commit: displays next class
+[33m57fa109[m HEAD@{13}: commit: -
+[33mf7fd3c4[m HEAD@{14}: commit: homepage v1
+[33ma7f9390[m HEAD@{15}: commit: main page
+[33meb6cc62[m HEAD@{16}: clone: from https://github.com/CommunityComputingClass/text-data-smv307
