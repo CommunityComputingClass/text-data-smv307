@@ -1,6 +1,12 @@
-const CLIENT_ID = "1045036238525-0ln5724lfecbktl2410rrknlmvc2ualr.apps.googleusercontent.com";
+const CLIENT_ID =
+  "1045036238525-0ln5724lfecbktl2410rrknlmvc2ualr.apps.googleusercontent.com";
 let API_KEY;
-const DISCOVERY_DOC = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
+let CALENDAR_ID =
+  localStorage.getItem("savedCalendarID") ||
+  "6n36uv9h2mrtcohginl69o7n9feluafr@import.calendar.google.com";
+console.log(CALENDAR_ID);
+const DISCOVERY_DOC =
+  "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
 const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
 // calander api quickstart from google
@@ -12,7 +18,7 @@ let gisInited = false;
 document.getElementById("authorize_button").style.visibility = "hidden";
 document.getElementById("signout_button").style.visibility = "hidden";
 
-// define api key
+// fetch api key
 
 async function fetchApiKey() {
   try {
@@ -21,7 +27,7 @@ async function fetchApiKey() {
     API_KEY = data.apiKey;
     gapiLoaded();
   } catch (error) {
-    console.error("Error fetching API key:", error);
+    console.error("error fetching API key:", error);
   }
 }
 
@@ -99,7 +105,7 @@ async function listUpcomingEvents() {
   let response;
   try {
     const request = {
-      calendarId: "6n36uv9h2mrtcohginl69o7n9feluafr@import.calendar.google.com", // have this be changeable later (mine for now)
+      calendarId: `${CALENDAR_ID}`,
       timeMin: new Date().toISOString(),
       showDeleted: false,
       singleEvents: true,
@@ -113,18 +119,33 @@ async function listUpcomingEvents() {
     return;
   }
 
+  console.log(
+    "making request to Google Calendar API with calendarId: ",
+    CALENDAR_ID
+  );
+
   const events = response.result.items.filter(
     (event) => event.start && event.start.dateTime
   ); // filter out all-day events
 
   // if no classes found
-  if (!events || events.length == 0) {
-    localStorage.setItem("savedClass", "no classes :)");
+  if (events.length == 0) {
+    localStorage.setItem("savedClass", "No upcoming classes :)");
     return;
   }
 
-  // show next class
   const nextClass = events[0];
+  console.log(nextClass);
+
+  /*/ if in a class
+
+  const currentTime = new Date();
+  const startTime =
+  const endTime = 
+  if ()
+*/
+
+  // show next class
   const output = `your next class is: ${nextClass.summary}`;
   localStorage.setItem("savedClass", output);
 }

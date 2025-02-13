@@ -28,33 +28,20 @@
       </div>
     </main>
 
-    <script src="get-next-class.js"></script>
-    <script src="custom-name.js"></script>
+    <!-- interactive -->
     <script>
       // greet user with name input in settings
-      let savedName = localStorage.getItem("savedText");
-      if (savedName){
+      let savedName = localStorage.getItem("savedName");
+      if (savedName) {
         document.getElementById("name").innerHTML = savedName;
-      };
+      }
 
       // display next class
-      let nextClass = localStorage.getItem("savedClass");
-      if (nextClass){
-        document.getElementById("next-class").innerHTML = nextClass;
-      };
+      let savedClass = localStorage.getItem("savedClass");
+      console.log(savedClass);
+      if (savedClass) {
+        document.getElementById("next-class").innerHTML = savedClass;
+      }
     </script>
-
-    <script
-      src="https://accounts.google.com/gsi/client"
-      async
-      defer
-      onload="gisLoaded()"
-    ></script>
-    <script
-      src="https://apis.google.com/js/api.js"
-      async
-      defer
-      onload="gapiLoaded()"
-    ></script>
   </body>
 </html>

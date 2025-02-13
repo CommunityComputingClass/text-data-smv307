@@ -13,7 +13,7 @@ img {
 button {
   background-color: #ffffff;
   padding: 10px;
-  margin-bottom: 20px;
+
   border-radius: 10px;
   border: none;
 }
@@ -21,4 +21,5 @@ button {
 input[type="text"] {
   border: 2px solid #de9eb1;
   border-radius: 5px;
+  margin-bottom: 15px;
 }
