@@ -17,9 +17,9 @@
     <main>
         <div id="content-frame">
           <!-- sign in w/google -->
-          <div class="lil-font purple-text left-align">
-            <button id="authorize_button" onclick="handleAuthClick()">sign into google</button>
-            <button id="signout_button" onclick="handleSignoutClick()">sign out</button>
+          <div class="left-align">
+            <button id="authorize_button" class="lil-font purple-text" onclick="handleAuthClick()">sign into google</button>
+            <button id="signout_button" class="lil-font purple-text" onclick="handleSignoutClick()">sign out</button>
           </div>
           <!-- name for greeting -->
           <form class="left-align">
@@ -32,8 +32,9 @@
 
     <p id="content" style="white-space: pre-wrap;"></p>
 
-    <script src="get-next-class.js"></script>
-    <script src="custom-name.js"></script>
+    <script src="frontend/get-next-class.js"></script>
+    <script src="frontend/custom-name.js"></script>
+
     <script src="https://accounts.google.com/gsi/client" async defer onload="gisLoaded()"></script>
     <script src="https://apis.google.com/js/api.js" async defer onload="gapiLoaded()"></script>
 

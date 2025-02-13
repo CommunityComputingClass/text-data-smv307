@@ -2,41 +2,59 @@
 <html lang="en">
   <head>
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Varela+Round&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Varela+Round&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Next Class</title>
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <meta charset="utf-8" />
-
   </head>
   <body>
     <main>
       <div id="content-frame">
-        <a id="settings-icon" href="settings.html"><img src="images/icon-settings.png" alt="settings"></a> 
-        <h1 id="greeter" class="big-font white-text left-align">Hello,<br><span id="username">Name</span></h1>
-        <p id="next-class" class="lil-font white-text left-align ">your next class will show up here</p>
+        <a id="settings-icon" href="settings.html"
+          ><img src="images/icon-settings.png" alt="settings"
+        /></a>
+        <h1 id="greeter" class="big-font white-text left-align">
+          Hello,<br /><span id="name">User</span>
+        </h1>
+        <p id="next-class" class="lil-font white-text left-align">
+          Go to settings and submit the required informtion please!
+        </p>
       </div>
     </main>
-
-    <!-- for test -->
-    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
-    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
-
-    <p id="content" style="white-space: pre-wrap;"></p>
 
     <script src="get-next-class.js"></script>
     <script src="custom-name.js"></script>
     <script>
       // greet user with name input in settings
       let savedName = localStorage.getItem("savedText");
-      console.log(savedName);
-      document.getElementById("username").innerHTML = savedName;
-    </script>
-    <script src="https://accounts.google.com/gsi/client" async defer onload="gisLoaded()"></script>
-    <script src="https://apis.google.com/js/api.js" async defer onload="gapiLoaded()"></script>
+      if (savedName){
+        document.getElementById("name").innerHTML = savedName;
+      };
 
+      // display next class
+      let nextClass = localStorage.getItem("savedClass");
+      if (nextClass){
+        document.getElementById("next-class").innerHTML = nextClass;
+      };
+    </script>
+
+    <script
+      src="https://accounts.google.com/gsi/client"
+      async
+      defer
+      onload="gisLoaded()"
+    ></script>
+    <script
+      src="https://apis.google.com/js/api.js"
+      async
+      defer
+      onload="gapiLoaded()"
+    ></script>
   </body>
 </html>
