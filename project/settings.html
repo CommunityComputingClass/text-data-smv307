@@ -1,81 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Varela+Round&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet"
-    />
 
-    <title>Next Class</title>
-    <link rel="stylesheet" type="text/css" href="styles/main.css" />
-    <link rel="stylesheet" type="text/css" href="styles/settings.css" />
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <main>
-      <div id="content-frame">
-        <form class="left-align">
-          <!-- name -->
-          <label for="name-input" class="lil-font white-text">name: </label>
-          <input
-            type="text"
-            id="name-input"
-            class="purple-text"
-            name="name-input"
-          />
-          <!-- calendar ID -->
-          <label for="calendar-ID-input" class="lil-font white-text">
-            calendar ID:
-          </label>
-          <input
-            type="text"
-            id="calendar-ID-input"
-            class="purple-text"
-            name="calendar-ID-input"
-            style="width: 95px"
-          />
-        </form>
-        <!-- sign in w/google -->
-        <div class="left-align">
-          <button
-            id="authorize_button"
-            class="lil-font purple-text"
-            onclick="handleAuthClick()"
-          >
-            sign into google
-          </button>
-          <button
-            id="signout_button"
-            class="lil-font purple-text"
-            onclick="handleSignoutClick()"
-          >
-            sign out
-          </button>
-        </div>
+<head>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Varela+Round&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet" />
+
+  <title>Next Class</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  <link rel="stylesheet" type="text/css" href="styles/settings.css" />
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <main>
+    <div id="content-frame">
+      <form class="left-align">
+        <!-- name -->
+        <label for="name-input" class="lil-font white-text">name: </label>
+        <input type="text" id="name-input" class="purple-text" name="name-input" />
+        <!-- calendar ID -->
+        <label for="calendar-ID-input" class="lil-font white-text">
+          calendar ID:
+        </label>
+        <input type="text" id="calendar-ID-input" class="purple-text" name="calendar-ID-input" style="width: 95px" />
+      </form>
+      <!-- sign in w/google -->
+      <div class="left-align">
+        <button id="authorize_button" class="lil-font purple-text" onclick="handleAuthClick()">
+          sign into google
+        </button>
+        <button id="signout_button" class="lil-font purple-text" onclick="handleSignoutClick()">
+          sign out
+        </button>
       </div>
-    </main>
-    <!-- back arrow -->
-    <a class="back-arrow" href="main.html"
-      ><img src="images/back-arrow.png" alt="back"
-    /></a>
+    </div>
+  </main>
+  <!-- back arrow -->
+  <a class="back-arrow" href="main.html"><img src="images/back-arrow.png" alt="back" /></a>
 
-    <script src="frontend/get-next-class.js"></script>
-    <script src="frontend/custom-name.js"></script>
+  <script src="frontend/get-next-class.js"></script>
+  <script src="frontend/custom-name.js"></script>
 
-    <script
-      src="https://accounts.google.com/gsi/client"
-      async
-      defer
-      onload="gisLoaded()"
-    ></script>
-    <script
-      src="https://apis.google.com/js/api.js"
-      async
-      defer
-      onload="gapiLoaded()"
-    ></script>
-  </body>
+  <script src="https://accounts.google.com/gsi/client" async defer onload="gisLoaded()"></script>
+  <script src="https://apis.google.com/js/api.js" async defer onload="gapiLoaded()"></script>
+</body>
+
 </html>
