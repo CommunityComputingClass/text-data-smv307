@@ -1,15 +1,12 @@
-const CLIENT_ID =
-  "1045036238525-0ln5724lfecbktl2410rrknlmvc2ualr.apps.googleusercontent.com";
+const CLIENT_ID = "1045036238525-0ln5724lfecbktl2410rrknlmvc2ualr.apps.googleusercontent.com";
 let API_KEY;
 let CALENDAR_ID =
   localStorage.getItem("savedCalendarID") ||
   "6n36uv9h2mrtcohginl69o7n9feluafr@import.calendar.google.com";
-console.log(CALENDAR_ID);
-const DISCOVERY_DOC =
-  "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
+const DISCOVERY_DOC = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
 const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
-// calander api quickstart from google
+// A P I  Q U I C K S T A R T (from google)
 
 let tokenClient;
 let gapiInited = false;
@@ -99,7 +96,7 @@ function handleSignoutClick() {
   }
 }
 
-// display next class
+// R E Q U E S T  N E X T  C L A S S
 
 async function listUpcomingEvents() {
   let response;
@@ -132,20 +129,26 @@ async function listUpcomingEvents() {
   if (events.length == 0) {
     localStorage.setItem("savedClass", "No upcoming classes :)");
     return;
-  }
+  };
 
-  const nextClass = events[0];
+  let nextClass = events[0]; 
   console.log(nextClass);
+  
+  let output;
+  let currentTime = new Date();
+  let startTime = new Date(nextClass.start.dateTime); // class start time
+  let endTime = new Date(nextClass.end.dateTime); // class end time
 
-  /*/ if in a class
+  if (currentTime >= startTime && currentTime <= endTime){
+    // if in a class, display current class
+    console.log("test");
+    output = `You are in ${nextClass.summary}`;
+  } else {
+    // if not in a class, display next class
+    output = `Your next class is ${nextClass.summary}`;
+  };
 
-  const currentTime = new Date();
-  const startTime =
-  const endTime = 
-  if ()
-*/
-
-  // show next class
-  const output = `your next class is: ${nextClass.summary}`;
   localStorage.setItem("savedClass", output);
+
+  setTimeout(listUpcomingEvents, 60000); // update every minute
 }

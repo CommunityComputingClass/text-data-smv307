@@ -5,6 +5,7 @@ document
     if (event.key === "Enter") {
       let nameInput = document.getElementById("name-input").value;
       localStorage.setItem("savedName", nameInput);
+      console.log(nameInput);
     }
   });
 
@@ -15,5 +16,6 @@ document
     if (event.key === "Enter") {
       let calendarIDInput = document.getElementById("calendar-ID-input").value;
       localStorage.setItem("savedCalendarID", calendarIDInput);
+      console.log(calendarIDInput);
     }
   });
