@@ -150,5 +150,6 @@ async function listUpcomingEvents() {
 
   localStorage.setItem("savedClass", output);
 
-  setTimeout(listUpcomingEvents, 60000); // update every minute
+  console.log("class updated")
+  setTimeout(listUpcomingEvents, 10000); // update every minute
 }

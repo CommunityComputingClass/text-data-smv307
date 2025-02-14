@@ -19,3 +19,5 @@ document
       console.log(calendarIDInput);
     }
   });
+
+// make a function for these later 
